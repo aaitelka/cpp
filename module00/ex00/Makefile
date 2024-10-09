@@ -1,23 +1,36 @@
-CC				:= c++
-NAME			:= megaphone
-SRCS			:= megaphone.cpp
-OBJS 			:= megaphone.o
-CFLAGS			:= -Wall -Werror -Wextra -std=c++98
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/10/07 11:11:14 by aaitelka          #+#    #+#              #
+#    Updated: 2024/10/09 10:04:49 by aaitelka         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-all:			$(NAME)
+CC					:= c++
+NAME				:= megaphone
+HEADS           	:= $(shell find . -name "*.hpp")
+SRCS            	:= $(shell find . -name "*.cpp")
+OBJS            	:= $(SRCS:.cpp=.o)
+CFLAGS				:= -Wall -Werror -Wextra -std=c++98
 
-$(NAME) : $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+all:				$(NAME)
 
-$(OBJS)%.o : %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME) 			: $(OBJS)
+					$(CC) $(OBJS) -o $(NAME)
 
-clean :
-	@$(RM) $(OBJS)
+%.o					: %.cpp $(HEADS)
+					$(CC) $(CFLAGS) -c $< -o $@
 
-fclean : clean
-	@$(RM) $(NAME)
+clean 				:
+					@$(RM) $(OBJS)
 
-re : fclean all
+fclean 				: clean
+					@$(RM) $(NAME)
 
-.PHONY : clean
+re 					: fclean all
+
+.PHONY 				: clean
