@@ -34,3 +34,4 @@
 #Others
 .gitignore
 .vscode
+.DS_Store
