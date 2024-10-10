@@ -6,16 +6,18 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:14:19 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/10/09 08:56:51 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:29:51 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "InputReader.hpp"
 #include <iomanip>
+#include "InputReader.hpp"
 
 static void readInput(const std::string& label, std::string& input) {
-    std::cout << "Enter " << std::setw(4) << std::right << label << " : ";
+    int             width;
 
+    width = 14 - label.length();
+    std::cout << "Enter " << label << std::setw(width) << ": ";
     getline(std::cin, input);
     if (std::cin.eof())
         exit(0);

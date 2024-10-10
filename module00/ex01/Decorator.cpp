@@ -6,15 +6,15 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:12:43 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/10/09 08:20:30 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/10/09 15:31:38 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iomanip>
 #include "Decorator.hpp"
 
 static std::string replaceTabsWithSpaces(const std::string& input) {
-    
-    std::string output;
+    std::string     output;
 
     output.reserve(input.size());
     for (size_t i = 0; i < input.length(); i++) {
@@ -43,14 +43,13 @@ Decorator& Decorator::line(int length) {
     return *this;
 }
 
-Decorator& Decorator::head(std::string label, int length) {
+Decorator& Decorator::head(std::string label) {
     std::cout << "|\t\t\t"<< label << "\t\t\t|" << std::endl;
-    line(length);
     return *this;
 }
 
 Decorator& Decorator::println(std::string label, std::string info) {
-    std::cout << label << info << std::endl;
+    std::cout << BLUE << label << info << RESET << std::endl;
     return *this;
 }
 
@@ -73,7 +72,7 @@ Decorator& Decorator::separator() {
 Decorator& Decorator::middle() {
     std::cout << "|" << std::endl;
     separator();
-    std::cout << "|" << std::endl;
+    std::cout << "|";
     return *this;
 }
 
@@ -104,10 +103,11 @@ Decorator& Decorator::fillRow(Contact& contact, size_t row, size_t size, int len
 }
 
 Decorator& Decorator::fillHeader() {
-    fillCol("index");
-    fillCol("first name");
-    fillCol("last name");
-    fillCol("nick name");
+    fillCol(INDEX);
+    fillCol(FNAME);
+    fillCol(LNAME);
+    fillCol(NNAME);
     middle();
+    std::cout << std::endl;
     return *this;
 }
