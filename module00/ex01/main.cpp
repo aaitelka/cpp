@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:15:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/10/10 22:07:10 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/19 15:35:43 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
-#include "InputReader.hpp"
 #include "Decorator.hpp"
+#include "PhoneBook.hpp"
 
 static inline void error(std::string error) {
     std::cout << RED << error << RESET << std::endl;
@@ -27,53 +25,36 @@ static inline bool isValid(char c) {
     return (c > '0' && c < '9');
 }
 
-static inline bool is_all_digits(std::string& str) {
-    size_t          len;
-
-    len = str.length();
-    for (size_t i = 0; i < len; i++) {
-        if (!isdigit(str[i]))
-            return false;
-    }
-    return true;
+std::string getFiled(Contact& contact, InputType field) {
+    std::string input;
+    do {
+        input = contact.read(field);
+    } while (input.empty());
+    return input;
 }
 
-void addContact() {
-    InputReader     reader;
-    Contact         contact;
-    std::string     phone;
-
+Contact& getContact(Contact& contact) {
     Decorator::getInstance().line(LINE).head("ADD new contact... :)").line(LINE);
     contact.setId(std::to_string(PhoneBook::getInstance().id + 1))
-        .setFirstName(reader.read(FIRST_NAME))
-        .setLastName(reader.read(LAST_NAME))
-        .setNickName(reader.read(NICK_NAME))
-        .setPhoneNumber(reader.read(PHONE_NUMBER))
-        .setDarkestSecret(reader.read(DARKEST_SECRET));
-    if (contact.hasEmptyOrBlankFiled())
-    {
-        error("Please fill all fileds\n");
-        return ;
-    }
-    phone = contact.getPhoneNumber();
-    if (!is_all_digits(phone)) {
-        error("Phone number must be digits only\n");
-        return ;
-    }
-    PhoneBook::getInstance().addContact(contact);
+        .setFirstName(getFiled(contact, FIRST_NAME))
+        .setLastName(getFiled(contact, LAST_NAME))
+        .setNickName(getFiled(contact, NICK_NAME))
+        .setPhoneNumber(getFiled(contact, PHONE_NUMBER))
+        .setDarkestSecret(getFiled(contact, DARKEST_SECRET));
+    return contact;
 }
 
 void search() {
-    Contact         contact;
     std::string     uid;
-    int             size;
 
-    size = PhoneBook::getInstance().size;
+    int size = PhoneBook::getInstance().size;
     while (true) {
         info("Search contact by index ￫ ");
         std::getline(std::cin, uid);
         if (std::cin.eof())
             exit(0);
+        if (uid.empty())
+            break;
         if (!isValid(uid[0])) {
             error("Please enter a valid id [1..8]");
             continue ;
@@ -81,8 +62,9 @@ void search() {
             std::cout << "You have " << size << " contact saved" << std::endl;
             continue ;
         }
-        contact = PhoneBook::getInstance().getContactById(uid);
+        Contact contact = PhoneBook::getInstance().getContactById(uid);
         Decorator::getInstance()
+            .println("", "")
             .println(FNAME + "\t: ", contact.getFirstName())
             .println(LNAME + "\t: ", contact.getLastName())
             .println(NNAME + "\t: ", contact.getNickName())
@@ -93,15 +75,11 @@ void search() {
 }
 
 void displayContacts() {
-    Contact         *contacts;
-    int             size;
 
-    size = PhoneBook::getInstance().size;
-    contacts = PhoneBook::getInstance().getContacts();
-    if (size == 0) {
-        error("PhoneBook is empty :(");
-        return ;
-    }
+    int size = PhoneBook::getInstance().size;
+    if (size == 0)
+        return error("PhoneBook is empty :(");
+    Contact *contacts = PhoneBook::getInstance().getContacts();
     Decorator::getInstance().line(45).fillHeader();
     for (int i = 0; i < size; i++)
         Decorator::getInstance().fillRow(contacts[i], i, size, 45);
@@ -110,8 +88,10 @@ void displayContacts() {
 
 void menu(std::string& item)
 {
+    Contact         contact;
+
     if (item.compare("ADD") == 0)
-        addContact();
+        PhoneBook::getInstance().addContact(getContact(contact));
     else if (item.compare("SEARCH") == 0)
         displayContacts();
     else if (item.compare("EXIT") == 0)

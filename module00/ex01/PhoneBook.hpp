@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:18:09 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/10/10 22:10:04 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/14 20:04:09 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 #include "Contact.hpp"
 
+#define CONTACTS_SIZE 8
+
 class PhoneBook {
     
 private:
-    Contact         contacts[8];
+    Contact         contacts[CONTACTS_SIZE];
     PhoneBook();
 
 public:
@@ -27,7 +29,7 @@ public:
     int             size;
     void            addContact(Contact& contact);
     Contact*        getContacts();
-    Contact&        getContactById(std::string uid);
+    Contact&        getContactById(std::string& uid);
 };
 
 #endif

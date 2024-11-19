@@ -3,28 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Decorator.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:12:43 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/10/09 15:31:38 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:24:18 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iomanip>
 #include "Decorator.hpp"
-
-static std::string replaceTabsWithSpaces(const std::string& input) {
-    std::string     output;
-
-    output.reserve(input.size());
-    for (size_t i = 0; i < input.length(); i++) {
-        if (input[i] == '\t')
-            output.append(4, ' ');
-        else
-            output.push_back(input[i]);
-    }
-    return output;
-}
 
 Decorator& Decorator::getInstance() {
     static Decorator decorator;
@@ -78,8 +65,6 @@ Decorator& Decorator::middle() {
 
 Decorator& Decorator::fillCol(std::string str) {
     std::cout << "|";
-    if (str.find('\t') != str.npos)
-        str = replaceTabsWithSpaces(str);
     if (str.length() > 10)
         str.replace(9, 9, ".");
     printCol(str.substr(0, 10));
