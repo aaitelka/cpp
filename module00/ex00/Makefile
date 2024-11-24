@@ -3,34 +3,34 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+         #
+#    By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 11:11:14 by aaitelka          #+#    #+#              #
-#    Updated: 2024/10/09 10:04:49 by aaitelka         ###   ########.fr        #
+#    Updated: 2024/11/24 23:01:48 by aaitelka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC					:= c++
-NAME				:= megaphone
-HEADS           	:= $(shell find . -name "*.hpp")
-SRCS            	:= $(shell find . -name "*.cpp")
-OBJS            	:= $(SRCS:.cpp=.o)
-CFLAGS				:= -Wall -Werror -Wextra -std=c++98
+CC		:= c++
+NAME	:= megaphone
+HEADS	:= $(shell find . -name "*.hpp")
+SRCS	:= $(shell find . -name "*.cpp")
+OBJS	:= $(SRCS:.cpp=.o)
+CFLAGS	:= -Wall -Werror -Wextra -std=c++98
 
-all:				$(NAME)
+all		: $(NAME)
 
-$(NAME) 			: $(OBJS)
-					$(CC) $(OBJS) -o $(NAME)
+$(NAME)	: $(OBJS)
+	$(CC) $(OBJS) -o $(NAME)
 
-%.o					: %.cpp $(HEADS)
-					$(CC) $(CFLAGS) -c $< -o $@
+%.o		: %.cpp $(HEADS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-clean 				:
-					@$(RM) $(OBJS)
+clean	:
+	$(RM) $(OBJS)
 
-fclean 				: clean
-					@$(RM) $(NAME)
+fclean	: clean
+	$(RM) $(NAME)
 
-re 					: fclean all
+re		: fclean all
 
-.PHONY 				: clean
+.PHONY	: clean
