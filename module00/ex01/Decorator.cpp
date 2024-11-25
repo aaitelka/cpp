@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:12:43 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/19 12:24:18 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/24 22:08:16 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Decorator& Decorator::line(int length) {
     for (int i = 0; i < length; i++)
     {
         if (i == 0 || i == (length -1))
-            std::cout << "+";
+            std::cout << BLUE << "+" << RESET;
         else
             std::cout << "-";
     }
@@ -30,8 +30,13 @@ Decorator& Decorator::line(int length) {
     return *this;
 }
 
-Decorator& Decorator::head(std::string label) {
-    std::cout << "|\t\t\t"<< label << "\t\t\t|" << std::endl;
+Decorator& Decorator::head(std::string label, bool footer) {
+    line(TW);
+    std::cout << "|" << std::setw(34) << label << std::setw(11) << "|\n";
+    if (footer)
+    {   
+        line(TW);
+    }
     return *this;
 }
 
@@ -46,7 +51,7 @@ Decorator& Decorator::printCol(std::string label) {
 }
 
 Decorator& Decorator::chunck() {
-    std::cout << "|" << std::setw(11) << std::setfill('-');
+    std::cout << "|" << RESET << std::setw(11) << std::setfill('-');
     return *this;
 }
 
@@ -57,14 +62,14 @@ Decorator& Decorator::separator() {
 }
 
 Decorator& Decorator::middle() {
-    std::cout << "|" << std::endl;
+    println("|", "");
     separator();
     std::cout << "|";
     return *this;
 }
 
 Decorator& Decorator::fillCol(std::string str) {
-    std::cout << "|";
+    std::cout << BLUE << "|" << RESET;
     if (str.length() > 10)
         str.replace(9, 9, ".");
     printCol(str.substr(0, 10));
@@ -77,10 +82,7 @@ Decorator& Decorator::fillRow(Contact& contact, size_t row, size_t size, int len
     fillCol(contact.getLastName());
     fillCol(contact.getNickName());
     if (row == (size - 1))
-    {
-        std::cout << "|" << std::endl;
-        Decorator::getInstance().line(len);
-    }
+        Decorator::getInstance().println("|", "").line(len);
     else
         middle();
 	std::cout << std::endl;

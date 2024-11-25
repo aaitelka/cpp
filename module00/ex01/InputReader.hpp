@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   InputReader.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 11:18:09 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/24 19:11:50 by aaitelka         ###   ########.fr       */
+/*   Created: 2024/11/21 14:52:31 by aaitelka          #+#    #+#             */
+/*   Updated: 2024/11/24 19:12:59 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PhoneBook_hpp
-#define PhoneBook_hpp
+#ifndef _INPUT_READER_HPP_
+#define _INPUT_READER_HPP_
 
-#include "Contact.hpp"
 
-#define CONTACTS_SIZE 8
+#include <iostream>
+#include <string>
+#include "PhoneBook.hpp"
 
-class PhoneBook {
-    
+enum Fields {
+    FIRST_NAME,
+    LAST_NAME,
+    NICK_NAME,
+    PHONE_NUMBER,
+    DARKEST_SECRET
+};
+
+class InputReader {
+
 private:
-    Contact         contacts[CONTACTS_SIZE];
-    PhoneBook();
+    Contact contact;
 
 public:
-    static PhoneBook& getInstance();
-    int             id;
-    int             size;
-    void            addContact(Contact contact);
-    Contact*        getContacts();
-    Contact&        getContactById(std::string& uid);
+    Contact     read(Contact& contact, Fields field);
+
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:18:05 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/14 20:03:28 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/24 19:11:40 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ PhoneBook& PhoneBook::getInstance() {
     return phoneBook;
 }
 
-void PhoneBook::addContact(Contact& contact) {
+void PhoneBook::addContact(Contact contact) {
     if (size < CONTACTS_SIZE)
         size++;
     contacts[id++] = contact;

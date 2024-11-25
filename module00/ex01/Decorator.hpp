@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Decorator.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:13:10 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/10/09 15:31:43 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/24 21:59:39 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 #include "Contact.hpp"
 
-const int LINE = 65;
+const int TW = 45;
 
 class Decorator {
 
 public:
     static Decorator& getInstance();
     Decorator&      line(int length);
-    Decorator&      head(std::string label);
+    Decorator&      head(std::string label, bool footer);
     Decorator&      println(std::string label, std::string info);
     Decorator&      printCol(std::string label);
     Decorator&      fillCol(std::string str);

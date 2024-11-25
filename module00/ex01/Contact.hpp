@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:12:20 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/19 15:28:50 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/24 19:13:57 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,7 @@ const std::string   FNAME = "first name";
 const std::string   LNAME = "last name";
 const std::string   NNAME = "nick name";
 const std::string   PNUMB = "phone number";
-const std::string   DSECR = "dark secret";
-
-enum InputType {
-    FIRST_NAME,
-    LAST_NAME,
-    NICK_NAME,
-    PHONE_NUMBER,
-    DARKEST_SECRET
-};
+const std::string   DSECR = "darkest secret";
 
 class Contact {
 
@@ -48,7 +40,6 @@ private:
     std::string     darkestSecret;
 
 public:
-    std::string     read(InputType input);
     Contact&        setFirstName(std::string firstName);
     std::string     getFirstName() const;
     Contact&        setLastName(std::string lastName);
