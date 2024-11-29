@@ -6,12 +6,11 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:18:05 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/29 02:53:32 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/29 03:03:08 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <iostream>
 
 PhoneBook::PhoneBook() : id(0), size(0)
 {
