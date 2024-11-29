@@ -6,13 +6,14 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:15:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/29 02:50:10 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/29 03:29:29 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Decorator.hpp"
 #include "PhoneBook.hpp"
 #include "InputReader.hpp"
+#include <sstream>
 
 static inline bool inRange(char c) {
     return (c > '0' && c < '9');
@@ -27,11 +28,13 @@ static inline void info(std::string error) {
 }
 
 Contact readFileds() {
-    Contact     contact;
-    InputReader reader;
+    Contact             contact;
+    InputReader         reader;
+    std::stringstream   ss;
 
     Decorator::getInstance().head("ADD new contact... :)", true);
-    contact.setId(std::to_string(PhoneBook::getInstance().getId()));
+    ss << PhoneBook::getInstance().getId();
+    contact.setId(ss.str());
     for (int i = 0; i < 5; i++) {   
         reader.read(contact, (Fields)i);
     }
