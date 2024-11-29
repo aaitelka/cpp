@@ -6,11 +6,12 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 14:28:28 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/24 23:06:28 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/29 03:42:19 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 
 int main(int ac, char *av[]) {
 
