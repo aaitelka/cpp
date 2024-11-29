@@ -6,12 +6,11 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 14:28:28 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/29 03:42:19 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/29 03:50:39 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
 
 int main(int ac, char *av[]) {
 
@@ -20,7 +19,7 @@ int main(int ac, char *av[]) {
 			std::string str = av[i];
 			size_t len = str.length();
 			for (size_t j = 0; j < len; j++) {
-				std::putchar(std::toupper(str[j]));
+				std::cout << (char)std::toupper(str[j]);
 			}
 		}
 	} else {		
