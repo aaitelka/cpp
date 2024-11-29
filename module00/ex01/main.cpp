@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:15:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/24 22:01:40 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/29 02:50:10 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "PhoneBook.hpp"
 #include "InputReader.hpp"
 
-static inline bool digit(char c) {
+static inline bool inRange(char c) {
     return (c > '0' && c < '9');
 }
 
@@ -31,16 +31,17 @@ Contact readFileds() {
     InputReader reader;
 
     Decorator::getInstance().head("ADD new contact... :)", true);
-    contact.setId(std::to_string(PhoneBook::getInstance().id + 1));
-    for (int i = 0; i < 5; i++)
+    contact.setId(std::to_string(PhoneBook::getInstance().getId()));
+    for (int i = 0; i < 5; i++) {   
         reader.read(contact, (Fields)i);
+    }
     return contact;
 }
 
 void search() {
     std::string     uid;
 
-    int size = PhoneBook::getInstance().size;
+    int size = PhoneBook::getInstance().getSize();
     while (true) {
         info("Search contact by index ￫ ");
         std::getline(std::cin, uid);
@@ -48,11 +49,11 @@ void search() {
             exit(0);
         if (uid.empty())
             break;
-        if (!digit(uid[0])) {
+        if (!inRange(uid[0]) || uid.length() > 1) {
             error("Please enter a valid id [1..8]");
             continue ;
         }
-        if (std::atoll(uid.c_str()) > size) {
+        if (std::atoi(uid.c_str()) > size) {
             std::cout << "You have " << size << " contact saved" << std::endl;
             continue ;
         }
@@ -71,7 +72,7 @@ void search() {
 
 void displayContacts() {
 
-    int size = PhoneBook::getInstance().size;
+    int size = PhoneBook::getInstance().getSize();
     if (size == 0)
         return error("PhoneBook is empty :(");
     Contact *contacts = PhoneBook::getInstance().getContacts();

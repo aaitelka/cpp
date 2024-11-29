@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:51:46 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/25 20:49:17 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:56:04 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static std::string replaceTabsWithSpaces(const std::string& input) {
 static std::string getField(const std::string& label) {
     std::string input;
     size_t width = 14 - label.length();
-    
+
     do {
         std::cout << "Enter " << label << std::setw(width) << ": ";
         std::getline(std::cin, input);
@@ -80,7 +80,7 @@ static std::string getField(const std::string& label) {
     return (input);
 }
 
-Contact InputReader::read(Contact& contact, Fields field) {
+void InputReader::read(Contact& contact, Fields field) {
 
     switch (field) {
         case FIRST_NAME:
@@ -101,5 +101,4 @@ Contact InputReader::read(Contact& contact, Fields field) {
         default:
             break;
     }
-    return contact;
 }

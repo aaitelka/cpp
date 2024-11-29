@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:18:05 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/24 19:11:40 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/29 02:53:32 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include "PhoneBook.hpp"
+#include <iostream>
 
 PhoneBook::PhoneBook() : id(0), size(0)
 {
@@ -35,5 +35,13 @@ Contact* PhoneBook::getContacts() {
 }
 
 Contact& PhoneBook::getContactById(std::string& uid) {
-    return getContacts()[std::atoll(uid.c_str()) - 1];
+    return getContacts()[std::atoi(uid.c_str()) - 1];
+}
+
+int PhoneBook::getId() const {
+    return id + 1;
+}
+
+int PhoneBook::getSize() const {
+    return size;
 }

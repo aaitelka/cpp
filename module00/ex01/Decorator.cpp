@@ -6,11 +6,10 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:12:43 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/24 22:08:16 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/25 23:29:46 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iomanip>
 #include "Decorator.hpp"
 
 Decorator& Decorator::getInstance() {

@@ -6,14 +6,17 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:13:10 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/24 21:59:39 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/11/25 23:35:21 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Decorator_hpp
 #define Decorator_hpp
 
+#include <iostream>
+#include <iomanip>
 #include "Contact.hpp"
+#include "InputReader.hpp"
 
 const int TW = 45;
 
