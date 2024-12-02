@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:52:31 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/11/25 23:35:33 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/12/02 16:30:06 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,6 @@ enum Fields {
 };
 
 class InputReader {
-
-private:
-    Contact contact;
 
 public:
     void     read(Contact& contact, Fields field);
