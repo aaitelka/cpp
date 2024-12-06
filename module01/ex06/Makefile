@@ -6,16 +6,16 @@
 #    By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/05 08:16:22 by aaitelka          #+#    #+#              #
-#    Updated: 2024/12/07 14:37:26 by aaitelka         ###   ########.fr        #
+#    Updated: 2024/12/06 23:22:01 by aaitelka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		:= c++
-NAME	:= violence
+NAME	:= harlFilter
 HEADS	:= $(shell find . -name "*.hpp")
 SRCS	:= $(shell find . -name "*.cpp")
 OBJS	:= $(SRCS:.cpp=.o)
-CFLAGS	:= -Wall -Werror -Wextra -std=c++98
+CFLAGS	:= -Wall -Werror -Wextra -Wshadow -std=c++98
 
 all		: $(NAME)
 

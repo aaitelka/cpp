@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 10:41:14 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/10/06 20:22:12 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/12/07 14:35:33 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-#include <iostream>
 
 void Harl::debug() {
     std::cout << "debug" << std::endl;
