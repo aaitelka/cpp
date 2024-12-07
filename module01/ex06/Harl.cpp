@@ -6,12 +6,11 @@
 /*   By: aaitelka <aaitelka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 10:41:14 by aaitelka          #+#    #+#             */
-/*   Updated: 2024/10/25 11:50:01 by aaitelka         ###   ########.fr       */
+/*   Updated: 2024/12/07 14:35:09 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
-#include <iostream>
 
 typedef void (Harl::*MFuncPtr)();
 
