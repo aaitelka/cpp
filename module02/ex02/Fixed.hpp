@@ -1,0 +1,64 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/28 18:54:12 by aaitelka          #+#    #+#             */
+/*   Updated: 2025/01/08 19:09:45 by aaitelka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
+#include <iostream>
+
+class Fixed {
+private:
+	int _fixed;  
+	static const int _fract = 8;
+
+public:
+	Fixed();
+	Fixed(const int val);
+	Fixed(const float val);
+
+	Fixed(const Fixed& other);
+	Fixed& operator=(const Fixed& other);
+	~Fixed();
+
+	int getRawBits() const;
+	void setRawBits(int const raw);
+
+	float toFloat() const;
+    int toInt() const;
+	
+	bool operator>(const Fixed& other) const;
+	bool operator<(const Fixed& other) const;
+	bool operator>=(const Fixed& other) const;
+	bool operator<=(const Fixed& other) const;
+	bool operator==(const Fixed& other) const;
+	bool operator!=(const Fixed& other) const;
+
+	Fixed operator+(const Fixed& other) const;
+	Fixed operator-(const Fixed& other) const;
+	Fixed operator*(const Fixed& other) const;
+	Fixed operator/(const Fixed& other) const;
+
+	Fixed& operator++();
+	Fixed operator++(int);
+	Fixed& operator--();
+	Fixed operator--(int);
+
+	static Fixed& min(Fixed& a, Fixed& b);
+	static const Fixed& min(const Fixed& a, const Fixed& b);
+	static Fixed& max(Fixed& a, Fixed& b);
+	static const Fixed& max(const Fixed& a, const Fixed& b);
+
+};
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
+
+#endif
