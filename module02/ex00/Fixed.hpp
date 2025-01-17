@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: molex <molex@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/08 18:13:23 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:33:32 by molex            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Fixed {
 	private:
 		int _fixed;
-		static const int _fract = 8;
+		static const int _fract;
 
 	public:
 		Fixed();

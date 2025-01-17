@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: molex <molex@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:08 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/08 18:10:24 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:29:25 by molex            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Fixed.hpp"
 
 int main( void ) {
+
 	Fixed a;
 	Fixed b( a );
 	Fixed c;
