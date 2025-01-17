@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: molex <molex@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:15 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/08 18:18:36 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/01/17 16:38:07 by molex            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ Fixed::Fixed(const float val) {
 	_fixed = roundf(val * (1 << _fract));
 }
 
-Fixed::Fixed(const Fixed& rhs) : _fixed(rhs._fixed) {
+Fixed::Fixed(const Fixed& rhs) {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = rhs;
 }
 
 Fixed& Fixed::operator=(const Fixed& rhs) {
