@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:08 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/08 17:53:45 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/01/31 18:58:19 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main( void ) {
 
-	Fixed a;
+	Fixed		a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
 	Fixed const d( b );

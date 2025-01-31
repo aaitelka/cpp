@@ -6,32 +6,32 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/08 19:04:19 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/01/31 19:44:21 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef EX01_FIXED_HPP
+#define EX01_FIXED_HPP
 
 #include <iostream>
 
 class Fixed {
-private:
-	int					_fixed;
-	static const int	_fract = 8;
-public:
+	private:
+		int					_fixed;
+		static const int	_fract;
 
-	Fixed();
-	Fixed(const int val);
-	Fixed(const float val);
+	public:
+		Fixed();
+		Fixed(const int val);
+		Fixed(const float val);
+		Fixed(const Fixed& rhs);
+		Fixed& operator=(const Fixed& rhs);
+		~Fixed();
 
-	Fixed(const Fixed& rhs);
-	Fixed& operator=(const Fixed& rhs);
-
-	~Fixed();
-
-	float toFloat() const;
-	int toInt() const;
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
+		float toFloat( void ) const;
+		int toInt( void ) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj);
