@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: molex <molex@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/17 15:33:32 by molex            ###   ########.fr       */
+/*   Updated: 2025/01/31 18:40:32 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef EX00_FIXED_HPP
+#define EX00_FIXED_HPP
 
 class Fixed {
 	private:
-		int _fixed;
-		static const int _fract;
+		int					_fixed;
+		static const int	_fract;
 
 	public:
 		Fixed();
@@ -24,8 +24,8 @@ class Fixed {
 		Fixed& operator=(const Fixed& other);
 		~Fixed();
 
-		int getRawBits() const;
-		void setRawBits(int const raw);
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
 };
 
 #endif
