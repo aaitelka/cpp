@@ -6,15 +6,17 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:15 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/08 19:07:31 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/01 02:32:10 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
+#include <cmath>
 
-Fixed::Fixed() : _fixed(0) {
-}
+const int Fixed::_fract = 8;
+
+Fixed::Fixed() : _fixed(0) {}
 
 Fixed::Fixed(const int val) {
 	_fixed = val << _fract;
@@ -24,12 +26,13 @@ Fixed::Fixed(const float val) {
 	_fixed = roundf(val * (1 << _fract));
 }
 
-Fixed::Fixed(const Fixed& rhs) : _fixed(rhs._fixed) {
+Fixed::Fixed(const Fixed& rhs) {
+	*this = rhs;
 }
 
 Fixed& Fixed::operator=(const Fixed& rhs) {
 	if (this != &rhs) {
-		_fixed = rhs._fixed;
+		_fixed = rhs.getRawBits();
 	}
 	return *this;
 }
@@ -45,54 +48,50 @@ void Fixed::setRawBits(int const raw) {
 }
 
 bool Fixed::operator>(const Fixed& rhs) const {
-	return _fixed > rhs._fixed;
+	return _fixed > rhs.getRawBits();
 }
 
 bool Fixed::operator<(const Fixed& rhs) const {
-	return _fixed < rhs._fixed;
+	return _fixed < rhs.getRawBits();
 }
 
 bool Fixed::operator>=(const Fixed& rhs) const {
-	return _fixed >= rhs._fixed;
+	return _fixed >= rhs.getRawBits();
 }
 
 bool Fixed::operator<=(const Fixed& rhs) const {
-	return _fixed <= rhs._fixed;
+	return _fixed <= rhs.getRawBits();
 }
 
 bool Fixed::operator==(const Fixed& rhs) const {
-	return _fixed == rhs._fixed;
+	return _fixed == rhs.getRawBits();
 }
 
 bool Fixed::operator!=(const Fixed& rhs) const {
-	return _fixed != rhs._fixed;
+	return _fixed != rhs.getRawBits();
 }
 
 Fixed Fixed::operator+(const Fixed& rhs) const {
 	Fixed result;
-	result._fixed = _fixed + rhs._fixed;
+	result._fixed = _fixed + rhs.getRawBits();
 	return result;
 }
 
 Fixed Fixed::operator-(const Fixed& rhs) const {
 	Fixed result;
-	result._fixed = _fixed - rhs._fixed;
+	result._fixed = _fixed - rhs.getRawBits();
 	return result;
 }
 
 Fixed Fixed::operator*(const Fixed& rhs) const {
 	Fixed result;
-	result._fixed = (_fixed * rhs._fixed) >> _fract;
+	result._fixed = (_fixed * rhs.getRawBits()) >> _fract;
 	return result;
 }
 
 Fixed Fixed::operator/(const Fixed& rhs) const {
-	// if (rhs._fixed == 0) {
-	//     std::cout << "Error division by zero" << std::endl;
-	// 	return *this;
-	// }
 	Fixed result;
-	result._fixed = (_fixed << _fract) / rhs._fixed;
+	result._fixed = (_fixed << _fract) / rhs.getRawBits();
 	return result;
 }
 

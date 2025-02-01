@@ -6,27 +6,26 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/08 19:09:45 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/01 02:31:02 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef EX03_FIXED_HPP
+#define EX03_FIXED_HPP
 
 #include <iostream>
 
 class Fixed {
 private:
-	int _fixed;  
-	static const int _fract = 8;
+	int					_fixed;  
+	static const int	_fract;
 
 public:
 	Fixed();
 	Fixed(const int val);
 	Fixed(const float val);
-
-	Fixed(const Fixed& other);
-	Fixed& operator=(const Fixed& other);
+	Fixed(const Fixed& rhs);
+	Fixed& operator=(const Fixed& rhs);
 	~Fixed();
 
 	int getRawBits() const;
@@ -35,17 +34,17 @@ public:
 	float toFloat() const;
     int toInt() const;
 	
-	bool operator>(const Fixed& other) const;
-	bool operator<(const Fixed& other) const;
-	bool operator>=(const Fixed& other) const;
-	bool operator<=(const Fixed& other) const;
-	bool operator==(const Fixed& other) const;
-	bool operator!=(const Fixed& other) const;
+	bool operator>(const Fixed& rhs) const;
+	bool operator<(const Fixed& rhs) const;
+	bool operator>=(const Fixed& rhs) const;
+	bool operator<=(const Fixed& rhs) const;
+	bool operator==(const Fixed& rhs) const;
+	bool operator!=(const Fixed& rhs) const;
 
-	Fixed operator+(const Fixed& other) const;
-	Fixed operator-(const Fixed& other) const;
-	Fixed operator*(const Fixed& other) const;
-	Fixed operator/(const Fixed& other) const;
+	Fixed operator+(const Fixed& rhs) const;
+	Fixed operator-(const Fixed& rhs) const;
+	Fixed operator*(const Fixed& rhs) const;
+	Fixed operator/(const Fixed& rhs) const;
 
 	Fixed& operator++();
 	Fixed operator++(int);
