@@ -6,26 +6,31 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 21:31:03 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/01 02:47:36 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/01 19:54:44 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-static inline float absolute(float value) {
+static inline Fixed absolute(Fixed value) {
   return (value < 0) ? value * -1 : value;
 }
 
-static float getArea(Point const a, Point const b, Point const c) {
+static inline Fixed crossPro(Fixed ax, Fixed by, Fixed cy) {
+    return ax * (by - cy);
+}
 
-  float ax = a.getX().toFloat();
-  float ay = a.getY().toFloat();
-  float bx = b.getX().toFloat();
-  float by = b.getY().toFloat();
-  float cx = c.getX().toFloat();
-  float cy = c.getY().toFloat();
+static Fixed getArea(Point const a, Point const b, Point const c) {
+
+  Fixed ax = a.getX();
+  Fixed ay = a.getY();
+  Fixed bx = b.getX();
+  Fixed by = b.getY();
+  Fixed cx = c.getX();
+  Fixed cy = c.getY();
   
-  return (absolute((ax * (by - cy)) + (bx * (cy - ay)) + (cx * (ay - by))));
+  Fixed cp = crossPro(ax, by, cy) + crossPro(bx, cy, ay) + crossPro(cx, ay, by);
+  return (absolute(cp));
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point) {

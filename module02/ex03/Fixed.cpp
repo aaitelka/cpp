@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:15 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/01 02:32:10 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:08:26 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,14 @@ int Fixed::getRawBits() const {
 
 void Fixed::setRawBits(int const raw) {
 	_fixed = raw;
+}
+
+float Fixed::toFloat() const {
+	return (float)(_fixed) / (1 << _fract);
+}
+
+int Fixed::toInt() const {
+	return _fixed >> _fract;
 }
 
 bool Fixed::operator>(const Fixed& rhs) const {
@@ -131,14 +139,6 @@ Fixed& Fixed::max(Fixed& a, Fixed& b) {
 
 const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
 	return (a > b) ? a : b;
-}
-
-float Fixed::toFloat() const {
-	return (float)(_fixed) / (1 << _fract);
-}
-
-int Fixed::toInt() const {
-	return _fixed >> _fract;
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
