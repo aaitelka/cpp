@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:54:08 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/01/08 18:45:58 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/01/31 19:46:36 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-	Fixed a;
+	
+	Fixed		a;	
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 	std::cout << a << std::endl;
