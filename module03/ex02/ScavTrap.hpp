@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:32:17 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/03 05:24:21 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/06 23:13:24 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class ScavTrap : public ClapTrap {
 	
 	public:
 		ScavTrap();
-		explicit ScavTrap(const std::string& name);
+		ScavTrap(const std::string& name);
 		ScavTrap(const ScavTrap& rhs);
 		ScavTrap& operator=(const ScavTrap& rhs);
 		~ScavTrap();

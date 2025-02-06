@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 18:55:29 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/03 05:40:27 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/06 23:12:49 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
 	std::cout << "FragTrap " << name << " Parameterized constructor called\n";
 }
 
-FragTrap::FragTrap(const FragTrap& rhs) : ClapTrap(rhs) {
-	std::cout << "FragTrap Copy constructor called" << std::endl;
-}
+FragTrap::FragTrap(const FragTrap& rhs) : ClapTrap(rhs) {}
 
 FragTrap& FragTrap::operator=(const FragTrap& rhs) {
 	ClapTrap::operator=(rhs);
