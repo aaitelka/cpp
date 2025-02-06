@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 18:55:33 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/03 05:44:30 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/06 23:50:35 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : virtual public ClapTrap {
+class FragTrap : public virtual ClapTrap {
 	
 	public:
 		FragTrap();

@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:32:20 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/03 05:32:44 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/06 23:51:18 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
-	hitPoints = 100;
-	energyPoints = 50;
-	attackDamage = 20;
-    std::cout << "ScavTrap " << name << " Default constructor called\n";
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
+    std::cout << "ScavTrap " << _name << " Default constructor called\n";
 }
 
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
-	hitPoints = 100;
-	energyPoints = 50;
-	attackDamage = 20;
-    std::cout << "ScavTrap " << name << " Parameterized constructor called\n";
+	_hitPoints = 100;
+	_energyPoints = 50;
+	_attackDamage = 20;
+    std::cout << "ScavTrap " << _name << " Parameterized constructor called\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap& rhs) : ClapTrap(rhs) {}
@@ -35,21 +35,21 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
 }
 
 ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap " << this->getName() << " Destructor called\n";
+    std::cout << "ScavTrap " << _name << " Destructor called\n";
 }
 
 void ScavTrap::attack(const std::string& target) {
 	
-	if (hitPoints == 0 || energyPoints == 0) {
-		std::cout << RED << "💀 ScavTrap " << name;
+	if (_hitPoints == 0 || _energyPoints == 0) {
+		std::cout << RED << "💀 ScavTrap " << _name;
 		std::cout << " alerady dead! 💀\n" << RESET;
 		return ;
 	}
-	--energyPoints;
-	std::cout << GREEN << "ScavTrap " << name << " attacks " << target;
-	std::cout << ", causing " << attackDamage << " points of damage!\n" << RESET;
+	--_energyPoints;
+	std::cout << GREEN << "ScavTrap " << _name << " attacks " << target;
+	std::cout << ", causing " << _attackDamage << " points of damage!\n" << RESET;
 }
 
 void ScavTrap::guardGate() {
-    std::cout << "ScavTrap " << name << " is now in Gate keeper mode!\n";
+    std::cout << "ScavTrap " << _name << " is now in Gate keeper mode!\n";
 }

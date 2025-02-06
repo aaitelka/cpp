@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 16:08:55 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/05 03:15:26 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/06 23:37:38 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class DiamondTrap : public ScavTrap, public FragTrap {
 
     private:
-        std::string name;
+        std::string _name;
 
         public:
         DiamondTrap();
