@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:32:20 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/06 23:41:32 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/06 23:42:00 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-    std::cout << "ScavTrap " << name << " Parameterized constructor called\n";
+    std::cout << "ScavTrap " << _name << " Parameterized constructor called\n";
 }
 
 ScavTrap::ScavTrap(const ScavTrap& rhs) : ClapTrap(rhs) {}
