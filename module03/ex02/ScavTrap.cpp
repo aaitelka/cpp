@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 22:32:20 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/06 23:26:21 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/06 23:41:32 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
 }
 
 ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap " << this->getName() << " Destructor called\n";
+    std::cout << "ScavTrap " << _name << " Destructor called\n";
 }
 
 void ScavTrap::attack(const std::string& target) {
