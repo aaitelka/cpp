@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 18:55:29 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/06 23:46:09 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/06 23:47:09 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ FragTrap& FragTrap::operator=(const FragTrap& rhs) {
 }
 
 FragTrap::~FragTrap() {
-	std::cout << "FragTrap " << _name << " Destructor called" << std::endl;
+	std::cout << "FragTrap " << _name << " Destructor called\n";
 }
 
 void FragTrap::attack(const std::string& target) {
