@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:58:28 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/14 19:19:30 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/16 08:27:55 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ Cure& Cure::operator=(const Cure& rhs) {
 Cure::~Cure() {}
 
 void Cure::use(ICharacter& target) {	
-	std::cout << "* heals " << target.getName() << "’s wounds *\n";
+	std::cout << GREEN << "* heals " << target.getName() \
+			  << "’s wounds *\n" << RESET;
 }
 
 AMateria* Cure::clone() const {

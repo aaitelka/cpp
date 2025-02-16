@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:46:45 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/12 23:43:00 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/16 08:27:02 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 #include <string>
 #include "ICharacter.h"
+
+#define RESET	"\033[0m"
+#define BLUE	"\033[34m"
+#define RED		"\033[31m"
+#define GREEN	"\033[32m"
+#define YELLOW	"\033[33m"
 
 class AMateria {
 
