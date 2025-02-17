@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:46:45 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/16 08:27:02 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/17 20:11:02 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 #define RED		"\033[31m"
 #define GREEN	"\033[32m"
 #define YELLOW	"\033[33m"
+
+#define SIZE 4
 
 class AMateria {
 

@@ -6,7 +6,7 @@
 #    By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/09 16:06:05 by aaitelka          #+#    #+#              #
-#    Updated: 2025/02/15 16:33:14 by aaitelka         ###   ########.fr        #
+#    Updated: 2025/02/18 01:34:02 by aaitelka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	:= prog
 HEADS	:= $(shell find . -name "*.h")
 SRCS	:= $(shell find . -name "*.cpp")
 OBJS	:= $(SRCS:.cpp=.o)
-CFLAGS	:= -Wall -Werror -Wextra -std=c++98 -g
+CFLAGS	:= -Wall -Werror -Wextra -std=c++98
 
 all		: $(NAME)
 

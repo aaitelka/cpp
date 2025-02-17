@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 15:33:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/16 08:26:54 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/17 17:22:23 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Character : public ICharacter {
 		std::string	_name;
 		int			_ssize;
 		AMateria*	_slots[4];
+		AMateria*	_unequiped[4];
 
 	public:
 		Character();

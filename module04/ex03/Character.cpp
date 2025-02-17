@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 15:33:15 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/16 08:34:49 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 00:49:17 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,36 @@
 
 Character::Character() : _name("Lmo9atil"), _ssize(0) {
 
-	for (size_t i = 0; i < 4; ++i)
-		_slots[i] = NULL;
+	for (size_t i = 0; i < SIZE; ++i) {
+		_slots[i] = _unequiped[i] = NULL;
+	}
 }
 
 Character::Character(std::string const & name)
 	: _name(name), _ssize(0) {
 
-	for (size_t i = 0; i < 4; ++i)
-		_slots[i] = NULL;
+	for (size_t i = 0; i < SIZE; ++i) {
+		_slots[i] = _unequiped[i] = NULL;
+	}
 }
 
 Character::Character(const Character& rhs)
 	: _name(rhs.getName()), _ssize(rhs._ssize) {
-	for (size_t i = 0; i < 4; ++i) {
-		if (rhs._slots[i])
-			_slots[i] = rhs._slots[i]->clone();
+
+	for (size_t i = 0; i < SIZE; ++i) {
+		_slots[i] =  (rhs._slots[i]) ? rhs._slots[i]->clone() : NULL;
+		_unequiped[i] = (rhs._unequiped[i]) ? rhs._unequiped[i]->clone() : NULL;
 	}
 }
 
 Character& Character::operator=(const Character& rhs) {
 
 	if (this != &rhs) {
-		for (size_t i = 0; i < 4; ++i) {
-            delete _slots[i];
-            _slots[i] = NULL;
-        }
-        for (size_t i = 0; i < 4; ++i) {
-            if (rhs._slots[i])
-                _slots[i] = rhs._slots[i]->clone();
+        for (size_t i = 0; i < SIZE; ++i) {
+			delete _slots[i];
+			delete _unequiped[i];
+			_slots[i] =  (rhs._slots[i]) ? rhs._slots[i]->clone() : NULL;
+			_unequiped[i] = (rhs._unequiped[i]) ? rhs._unequiped[i]->clone() : NULL;
         }
 		_name = rhs.getName();
 		_ssize = rhs._ssize;
@@ -53,8 +54,11 @@ Character& Character::operator=(const Character& rhs) {
 
 Character::~Character() {
 
-	for (size_t i = 0; i < 4; ++i)
+	for (size_t i = 0; i < SIZE; ++i)
+	{
 		delete _slots[i];
+		delete _unequiped[i];
+	}
 }
 
 std::string const& Character::getName() const {
@@ -63,7 +67,7 @@ std::string const& Character::getName() const {
 
 void Character::use(int idx, ICharacter& target) {
 
-	if (_ssize < idx) {
+	if (idx > _ssize) {
 		std::cout << "error array has " << _ssize << " element\'s\n";
 		return ;
 	}
@@ -77,23 +81,24 @@ void Character::use(int idx, ICharacter& target) {
 
 void Character::equip(AMateria* m) {
 
-	if (m != NULL && _ssize < 4) {
+	if (m != NULL && _ssize < SIZE) {
 		_slots[_ssize++] = m->clone();
+		return ;
 	}
-	else
-		std::cout << YELLOW << "Character inventory is full\n" << RESET;
+	std::cout << YELLOW << "Character inventory is full\n" << RESET;
 }
 
 void Character::unequip(int idx) {
+
 	if (_ssize < idx) {
 		std::cout << "error array has " << _ssize << " element\'s\n";
 		return ;
 	}
 	if (idx < 0 || idx >= _ssize) {
 		std::cout << RED << "error array out of bounds\n" << RESET;
-		return ;	
+		return ;
 	}
 	_ssize--;
-	delete _slots[idx]; //!should save addresses and delete it in ~destructor!
+	_unequiped[idx] = _slots[idx];
 	_slots[idx] = NULL;
 }

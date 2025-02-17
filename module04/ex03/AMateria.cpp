@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:46:47 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/14 15:27:28 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/17 23:54:22 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ std::string const& AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter& target) {	
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
+	std::cout << "* AMateria " << _type << " with name : ";
+	std::cout << target.getName() << " does nothing *\n";
 }
