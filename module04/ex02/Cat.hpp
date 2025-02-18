@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.h                                              :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 16:25:57 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/05 05:09:05 by aaitelka         ###   ########.fr       */
+/*   Created: 2025/01/20 16:26:05 by aaitelka          #+#    #+#             */
+/*   Updated: 2025/02/18 18:19:15 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-#define DOG_H
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include "AAnimal.h"
-#include "Brain.h"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Dog : public AAnimal {
+class Cat : public AAnimal {
 
 	private:
-		Brain *brain;
-			
-	public:
-		Dog();
-		Dog(const Dog& rhs);
-		Dog& operator=(const Dog& rhs);
-		~Dog();
+		Brain *_brain;
 
-		std::string getType() const;
+	public:
+		Cat();
+		Cat(const Cat& rhs);
+		Cat& operator=(const Cat& rhs);
+		~Cat();
+
 		void makeSound() const;
+		Brain *getBrain() const;
 };
 
 #endif

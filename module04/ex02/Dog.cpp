@@ -6,42 +6,42 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:24:01 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/06 08:17:48 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 18:19:53 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Dog.h"
+#include "Dog.hpp"
 
 Dog::Dog() {
 	std::cout << "Dog constructed\n";
-	type = "Dog";
-	// brain = new Brain();
+	_type = "Dog";
+	_brain = new Brain();
 }
 
 Dog::Dog(const Dog& rhs) : AAnimal(rhs) {
-	// *this = rhs;
+	_brain = new Brain(*rhs.getBrain());
 }
 
 Dog& Dog::operator=(const Dog& rhs) {
 
 	if (this != &rhs) {
-		delete brain;
-		brain = new Brain();
-		this->type = rhs.getType();
+		delete _brain;
+		_brain = new Brain(*rhs.getBrain());
+		_type = rhs.getType();
 	}
 	return *this;
 }
 
 Dog::~Dog() {
 	std::cout << "Dog destructed\n";
-	// delete brain;
+	delete _brain;
 }
 
 void Dog::makeSound() const {
 	std::cout << "How Hoooooow!!!\n";
 }
 
-std::string Dog::getType() const {
-	return type;
+Brain *Dog::getBrain() const {
+	return _brain;
 }

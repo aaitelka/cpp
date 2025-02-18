@@ -6,43 +6,42 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:04:43 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/06 08:29:38 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 18:19:30 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Cat.h"
+#include "Cat.hpp"
 
 Cat::Cat() {
 	std::cout << "Cat constructed\n";
-	type = "Cat";
-	brain = new Brain();
+	_type = "Cat";
+	_brain = new Brain();
 }
 
 Cat::Cat(const Cat& rhs) : AAnimal(rhs) {
-	brain = rhs.brain;
+	_brain = new Brain(*rhs.getBrain());
 }
 
 Cat& Cat::operator=(const Cat& rhs) {
 	
-	std::cout << "\ncopy assignment called\n\n";
 	if (this != &rhs) {
-		delete brain;
-		brain = new Brain();
-		this->type = rhs.getType();
+		delete _brain;
+		_brain = new Brain(*rhs.getBrain());
+		_type = rhs.getType();
 	}
 	return *this;
 }
 
 Cat::~Cat() {
 	std::cout << "Cat destructed\n";
-	delete brain;
-}
-
-std::string Cat::getType() const {
-	return type;
+	delete _brain;
 }
 
 void Cat::makeSound() const {
 	std::cout << "Meo Meeeeeow!!!\n";
+}
+
+Brain *Cat::getBrain() const {
+	return _brain;
 }
