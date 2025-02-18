@@ -6,16 +6,16 @@
 #    By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/09 16:06:05 by aaitelka          #+#    #+#              #
-#    Updated: 2025/02/18 01:34:02 by aaitelka         ###   ########.fr        #
+#    Updated: 2025/02/18 20:13:08 by aaitelka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		:= c++
 NAME	:= prog
-HEADS	:= $(shell find . -name "*.h")
+HEADS	:= $(shell find . -name "*.hpp")
 SRCS	:= $(shell find . -name "*.cpp")
 OBJS	:= $(SRCS:.cpp=.o)
-CFLAGS	:= -Wall -Werror -Wextra -std=c++98
+CFLAGS	:= -Wall -Werror -Wextra -std=c++98 -g
 
 all		: $(NAME)
 

@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:58:35 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/16 08:26:10 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/19 00:01:59 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Ice.h"
+#include "Ice.hpp"
 
 Ice::Ice() {
 	_type = "ice";
@@ -31,8 +31,7 @@ Ice& Ice::operator=(const Ice& rhs) {
 Ice::~Ice() {}
 
 void Ice::use(ICharacter& target) {	
-	std::cout << BLUE << "* shoots an ice bolt at " \
-			  << target.getName() << " *\n" << RESET;
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 }
 
 AMateria* Ice::clone() const {

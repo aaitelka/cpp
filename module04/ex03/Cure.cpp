@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:58:28 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/16 08:27:55 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/19 00:03:40 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Cure.h"
+#include "Cure.hpp"
 
 Cure::Cure() {
 	_type = "cure";
@@ -31,8 +31,7 @@ Cure& Cure::operator=(const Cure& rhs) {
 Cure::~Cure() {}
 
 void Cure::use(ICharacter& target) {	
-	std::cout << GREEN << "* heals " << target.getName() \
-			  << "’s wounds *\n" << RESET;
+	std::cout << "* heals " << target.getName() << "\'s wounds *\n";
 }
 
 AMateria* Cure::clone() const {

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.h                                        :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 15:33:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/17 17:22:23 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 22:52:10 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
 #include <string>
-#include "AMateria.h" 
-#include "ICharacter.h"
+#include "AMateria.hpp" 
+#include "ICharacter.hpp"
 
 class Character : public ICharacter {
 
 	private:
 		std::string	_name;
-		int			_ssize;
 		AMateria*	_slots[4];
 		AMateria*	_unequiped[4];
 

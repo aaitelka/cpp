@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:46:47 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/17 23:54:22 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 18:38:06 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "AMateria.h"
+#include "AMateria.hpp"
 
 AMateria::AMateria() : _type("Undefined") {}
 

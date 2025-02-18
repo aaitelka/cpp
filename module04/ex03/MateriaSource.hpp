@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.h                                    :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:11:57 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/14 19:21:03 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/19 00:06:56 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIA_SOURCE_H
-#define MATERIA_SOURCE_H
+#ifndef MATERIA_SOURCE_HPP
+#define MATERIA_SOURCE_HPP
 
-#include "IMateriaSource.h"
-#include "AMateria.h"
+#include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
 class MateriaSource : public IMateriaSource {
 
 	private:
-		int			_ssize;
 		AMateria*	_slots[4];
 		
 	public:

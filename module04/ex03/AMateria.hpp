@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.h                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:46:45 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/17 20:11:02 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/19 00:00:57 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_H
-#define AMATERIA_H
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
 #include <string>
-#include "ICharacter.h"
-
-#define RESET	"\033[0m"
-#define BLUE	"\033[34m"
-#define RED		"\033[31m"
-#define GREEN	"\033[32m"
-#define YELLOW	"\033[33m"
+#include "ICharacter.hpp"
 
 #define SIZE 4
 

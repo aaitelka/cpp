@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.h                                             :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/09 14:58:33 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/12 23:58:11 by aaitelka         ###   ########.fr       */
+/*   Created: 2025/02/09 14:58:37 by aaitelka          #+#    #+#             */
+/*   Updated: 2025/02/18 18:44:13 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_H
-#define CURE_H
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include "AMateria.h"
+#include "AMateria.hpp"
 
-class Cure : public AMateria {
+class Ice : public AMateria {
 	
 	public:
-		Cure();
-		Cure(std::string const & type);
-		Cure(const Cure& rhs);
-		Cure& operator=(const Cure& rhs);
-		~Cure();
+		Ice();
+		Ice(std::string const & type);
+		Ice(const Ice& rhs);
+		Ice& operator=(const Ice& rhs);
+		~Ice();
 
 		AMateria* clone() const;
 		void use(ICharacter& target);
