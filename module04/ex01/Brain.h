@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 03:56:01 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/06 08:00:49 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:41:43 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ class Brain {
 	private:
 		std::string ideas[100];
 
-	// public:
-	// 	Brain();
-	// 	Brain(const Brain& rhs);
-	// 	Brain& operator=(const Brain& rhs);
-	// 	~Brain();
+	public:
+		Brain();
+		Brain(const Brain& rhs);
+		Brain& operator=(const Brain& rhs);
+		~Brain();
 
+		std::string getIdeaAt(int index) const;
 };
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:59:29 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/06 08:14:37 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:43:14 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 int main() {
 
-	const int size = 2;
+	const int size = 4;
 	Animal *animals[size] = {0};
 	
 	std::cout << GREEN << "\n░░░░░░░░░░[ create ]░░░░░░░░░░\n\n" << RESET;
