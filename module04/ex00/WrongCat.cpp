@@ -15,12 +15,10 @@
 
 WrongCat::WrongCat() {
 	std::cout << "WrongCat constructed\n";
-	type = "WrongCat";
+	_type = "WrongCat";
 }
 
-WrongCat::WrongCat(const WrongCat& rhs) : WrongAnimal(rhs) {
-	*this = rhs;
-}
+WrongCat::WrongCat(const WrongCat& rhs) : WrongAnimal(rhs) {}
 
 WrongCat& WrongCat::operator=(const WrongCat& rhs) {
 	WrongAnimal::operator=(rhs);
@@ -29,10 +27,6 @@ WrongCat& WrongCat::operator=(const WrongCat& rhs) {
 
 WrongCat::~WrongCat() {
 	std::cout << "WrongCat destructed\n";
-}
-
-std::string WrongCat::getType() const {
-	return type;
 }
 
 void WrongCat::makeSound() const {

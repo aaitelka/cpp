@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:23:06 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/05 04:13:43 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:14:08 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Animal {
 
 	protected:
-		std::string type;
+		std::string _type;
 
 	public:
 		Animal();

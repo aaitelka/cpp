@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:26:05 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/05 04:14:07 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:17:00 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ class Cat : public Animal {
 		Cat(const Cat& rhs);
 		Cat& operator=(const Cat& rhs);
 		~Cat();
-		
-		std::string getType() const;	
+
 		void makeSound() const;
 };
 

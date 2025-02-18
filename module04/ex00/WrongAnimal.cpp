@@ -6,34 +6,33 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:30:07 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/05 04:12:56 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:23:58 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "WrongAnimal.h"
 
-WrongAnimal::WrongAnimal() : type("Unknown") {
-	std::cout << "WrongAnimal constructred\n";
+WrongAnimal::WrongAnimal() : _type("Unknown") {
+	std::cout << "WrongAnimal constructed\n";
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& rhs) {
-	*this = rhs;	
-}
+WrongAnimal::WrongAnimal(const WrongAnimal& rhs) : _type(rhs.getType()) {}
+
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs) {
 	if (this != &rhs) {
-		this->type = rhs.getType();
+		_type = rhs.getType();
 	}
 	return *this;
 }
 
 WrongAnimal::~WrongAnimal() {
-	std::cout << "WrongAnimal destructred\n";
+	std::cout << "WrongAnimal destructed\n";
 }
 
 std::string WrongAnimal::getType() const {
-	return type;
+	return _type;
 }
 
 void WrongAnimal::makeSound() const {

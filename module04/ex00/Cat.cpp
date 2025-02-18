@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:04:43 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/05 04:13:32 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:16:28 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 
 Cat::Cat() {
 	std::cout << "Cat constructed\n";
-	type = "Cat";
+	_type = "Cat";
 }
 
-Cat::Cat(const Cat& rhs) : Animal(rhs) {
-	*this = rhs;
-}
+Cat::Cat(const Cat& rhs) : Animal(rhs) {}
 
 Cat& Cat::operator=(const Cat& rhs) {
 	Animal::operator=(rhs);
@@ -29,10 +27,6 @@ Cat& Cat::operator=(const Cat& rhs) {
 
 Cat::~Cat() {
 	std::cout << "Cat destructed\n";
-}
-
-std::string Cat::getType() const {
-	return type;
 }
 
 void Cat::makeSound() const {
