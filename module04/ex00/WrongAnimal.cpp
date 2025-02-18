@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:30:07 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/18 16:23:58 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:51:22 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "WrongAnimal.h"
+#include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : _type("Unknown") {
 	std::cout << "WrongAnimal constructed\n";

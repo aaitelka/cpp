@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:30:07 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/18 16:23:40 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:52:02 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.h"
+#include "Animal.hpp"
 
 Animal::Animal() : _type("Unknown") {
 	std::cout << "Animal constructed\n";

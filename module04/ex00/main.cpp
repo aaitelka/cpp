@@ -6,19 +6,24 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:59:29 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/05 04:13:12 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:53:44 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.h"
-#include "Dog.h"
-#include "Cat.h"
-#include "WrongAnimal.h"
-#include "WrongCat.h"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+
+#define RESET	"\033[0m"
+#define RED		"\033[31m"
+#define GREEN	"\033[32m"
 
 int main() {
 
+	std::cout << GREEN << "\n░░░░░░░░░░[ CORRECT ]░░░░░░░░░░\n\n" << RESET;
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
@@ -32,7 +37,7 @@ int main() {
     delete i;
     delete j;
 
-    std::cout << "---------------WRONG---------------" << std::endl;
+	std::cout << RED << "\n░░░░░░░░░░[ WRONG ]░░░░░░░░░░\n\n" << RESET;
 
     const WrongAnimal* wmeta = new WrongAnimal();
     const WrongAnimal* wi = new WrongCat();

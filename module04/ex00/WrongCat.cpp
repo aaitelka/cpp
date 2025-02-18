@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "WrongCat.h"
+#include "WrongCat.hpp"
 
 WrongCat::WrongCat() {
 	std::cout << "WrongCat constructed\n";
