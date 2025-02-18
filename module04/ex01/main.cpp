@@ -6,14 +6,14 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:59:29 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/18 17:43:14 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:55:45 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.h"
-#include "Dog.h"
-#include "Cat.h"
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
 
 #define RESET	"\033[0m"
 #define RED		"\033[31m"

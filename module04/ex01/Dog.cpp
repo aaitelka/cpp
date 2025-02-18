@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 16:24:01 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/18 17:39:12 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:55:37 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Dog.h"
+#include "Dog.hpp"
 
 Dog::Dog() {
 	std::cout << "Dog constructed\n";

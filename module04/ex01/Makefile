@@ -6,14 +6,14 @@
 #    By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/28 18:59:26 by aaitelka          #+#    #+#              #
-#    Updated: 2025/02/06 07:54:16 by aaitelka         ###   ########.fr        #
+#    Updated: 2025/02/18 17:55:50 by aaitelka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CC		:= c++
 NAME	:= animal
-HEADS	:= $(shell find . -name "*.h")
+HEADS	:= $(shell find . -name "*.hpp")
 SRCS	:= $(shell find . -name "*.cpp")
 OBJS	:= $(SRCS:.cpp=.o)
 CFLAGS	:= -g -Wall -Werror -Wextra -std=c++98

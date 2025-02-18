@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 17:04:43 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/18 17:39:09 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:55:29 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Cat.h"
+#include "Cat.hpp"
 
 Cat::Cat() {
 	std::cout << "Cat constructed\n";

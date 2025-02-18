@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.h                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 03:56:01 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/18 17:41:43 by aaitelka         ###   ########.fr       */
+/*   Created: 2025/01/20 16:25:57 by aaitelka          #+#    #+#             */
+/*   Updated: 2025/02/18 18:10:16 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_H
-#define BRAIN_H
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class Brain {
-	
+class Dog : public Animal {
+
 	private:
-		std::string ideas[100];
-
+		Brain *_brain;
+			
 	public:
-		Brain();
-		Brain(const Brain& rhs);
-		Brain& operator=(const Brain& rhs);
-		~Brain();
+		Dog();
+		Dog(const Dog& rhs);
+		Dog& operator=(const Dog& rhs);
+		~Dog();
 
-		std::string getIdeaAt(int index) const;
+		void makeSound() const;
+		Brain *getBrain() const;
 };
 
 #endif

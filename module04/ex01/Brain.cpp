@@ -6,12 +6,12 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 04:00:45 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/18 17:41:56 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:55:25 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Brain.h"
+#include "Brain.hpp"
 
 Brain::Brain() {
     std::cout << "Brain constructed\n";
