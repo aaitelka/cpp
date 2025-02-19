@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 18:15:28 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/19 00:06:49 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/19 03:08:55 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,5 @@ void MateriaSource::learnMateria(AMateria *m) {
 			break ;	
 		}
 	}
+	delete m;
 }

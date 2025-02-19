@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 14:58:28 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/19 00:03:40 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/19 03:14:34 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ void Cure::use(ICharacter& target) {
 }
 
 AMateria* Cure::clone() const {
-	return new Cure();
+	return new Cure(*this);
 }

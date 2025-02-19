@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 15:33:15 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/02/19 00:01:13 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/02/19 03:16:29 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,9 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-	if (idx < 0 || idx >= SIZE) {
-		std::cout << "error array out of bounds\n";
-		return ;
+
+	if (idx >= 0 && idx < SIZE) {
+		_unequiped[idx] = _slots[idx];
+		_slots[idx] = NULL;
 	}
-	_unequiped[idx] = _slots[idx];
-	_slots[idx] = NULL;
 }
