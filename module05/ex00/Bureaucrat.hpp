@@ -6,13 +6,14 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:31:18 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/12 06:10:55 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/14 03:06:42 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include <ostream>
 #include <exception>
 #include <string>
 
@@ -20,35 +21,37 @@ class Bureaucrat {
 
 	private:
 		const std::string	_name;
-		unsigned int		_grade;
+		int					_grade;
 	
 	public:
-		Bureaucrat(unsigned int grade);
+		Bureaucrat();
+		Bureaucrat(int grade);
+		Bureaucrat(const Bureaucrat& rhs);
+		Bureaucrat& operator=(const Bureaucrat& rhs);
+		~Bureaucrat();
+
 		const std::string getName() const;
-		unsigned int getGrade() const;
-		
+		int getGrade() const;
+
 		void upGrade();
 		void downGrade();
 
-		class GradeTooHighException : std::exception {
-			private:
-				std::string _message;
-			public:
-				GradeTooHighException(const std::string& message);
-				virtual ~GradeTooHighException() throw();
+		class GradeTooHighException : public std::invalid_argument {
 
-				virtual const char *what() const throw();
+			public:
+				GradeTooHighException(const std::string& what);
+				virtual ~GradeTooHighException() throw();
 		};
 
-		class GradeTooLowException : std::exception {
-			private:
-				std::string _message;
-			public:
-				GradeTooLowException(const std::string& message);
-				virtual ~GradeTooLowException() throw();
+		class GradeTooLowException : public std::invalid_argument {
 
-				virtual const char *what() const throw();
+			public:
+				GradeTooLowException(const std::string& what);
+				virtual ~GradeTooLowException() throw();
 		};
 };
+
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs);
 
 #endif
