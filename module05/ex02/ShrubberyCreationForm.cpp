@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 18:09:14 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/18 13:07:12 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:31:15 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,18 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		try {
 			const std::string filename = _target + "_shrubbery";
 			std::ofstream file(filename.c_str());
-
-			file << "efew";
+			file << "          &&& &&  & &&\n";
+        	file << "      && &\\/&\\|& ()|/ @, &&\n";
+        	file << "      &\\/(/&/&||/& /_/)_&/_&\n";
+        	file << "   &() &\\/&|()|/&\\/ '%\" & ()\n";
+        	file << "  &_\\_&&_\\ |& |&&/&__%_/_& &&\n";
+        	file << "&&   && & &| &| /& & % ()& /&&\n";
+        	file << " ()&_---()&\\&\\|&&-&&--%---()~\n";
+        	file << "     &&     \\| |\n";
+        	file << "            \\| |\n";
+        	file << "            \\| |\n";
+        	file << "            \\| |\n";
+        	file << "       , -=-~  .-^- _\n";
 			file.close();
 			
 		} catch (std::ios_base::failure& e) {

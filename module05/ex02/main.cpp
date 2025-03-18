@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:45:58 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/18 13:07:48 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:15:56 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main() {
 
@@ -25,6 +27,10 @@ int main() {
     b.signForm(s);
 
     s.execute(b);
+
+    RobotomyRequestForm p("noothing");
+    b.signForm(p);
+    p.execute(b);
     // AForm f;
     // std::cout << b << std::endl;
     // b.upGrade();
