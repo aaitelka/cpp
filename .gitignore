@@ -35,3 +35,4 @@
 .gitignore
 .vscode
 .DS_Store
+any*

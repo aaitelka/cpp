@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 02:07:29 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/15 18:23:55 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:25:45 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ AForm::AForm(const std::string& name, const int grdSign, const int grdExec) :
 }
 
 AForm::AForm(const AForm& rhs)
-	:	_name(rhs.getName()), _grdSign(rhs.getRequiredGrade()),
-		_grdExec(rhs.getGradeToExecute()), _isSigned(rhs.isSigned()) {
+	:	_name(rhs.getName()), _grdSign(rhs.getSignGrade()),
+		_grdExec(rhs.getExecGrade()), _isSigned(rhs.isSigned()) {
 }
 
 AForm& AForm::operator=(const AForm& rhs) {
 	if (this != &rhs) {
 		_isSigned = rhs.isSigned();
+		_target = rhs._target; //! shoud use getter
 	}
 	return *this;
 }
@@ -40,11 +41,11 @@ const std::string AForm::getName() const {
 	return _name;
 }
 
-int AForm::getRequiredGrade() const {
+int AForm::getSignGrade() const {
 	return _grdSign;
 }
 
-int	AForm::getGradeToExecute() const {
+int	AForm::getExecGrade() const {
 	return _grdExec;
 }
 
@@ -64,6 +65,16 @@ void AForm::beSigned(Bureaucrat& bureaucrat) {
 	}
 }
 
+void AForm::execute(Bureaucrat const & executor) const {
+
+	if (isSigned() && executor.getGrade() <= getExecGrade()) {
+		
+	} else {
+		throw GradeTooHighException("Attempting to execute form");
+	}
+}
+
+
 AForm::GradeTooHighException::GradeTooHighException(const std::string& what)
 	: std::out_of_range(what) {
 }
@@ -80,8 +91,8 @@ AForm::GradeTooLowException::~GradeTooLowException() throw() {
 
 std::ostream& operator<<(std::ostream& os, const AForm& rhs) {
 	os << "AForm Name: " << rhs.getName() << "\n";
-	os << "Required Grade: " << rhs.getRequiredGrade() << "\n";
-    os << "Grade to Execute: " << rhs.getGradeToExecute() << "\n";
+	os << "Required Grade: " << rhs.getSignGrade() << "\n";
+    os << "Grade to Execute: " << rhs.getExecGrade() << "\n";
     os << "Is Signed: " << (rhs.isSigned() ? "Yes" : "No") << "\n";
 	return os;
 }

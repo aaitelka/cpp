@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:38:11 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/15 18:07:23 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:28:37 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,16 @@ void Bureaucrat::signForm(AForm& form) {
 	} catch (const AForm::GradeTooLowException& e) {
 		std::cout << _name << " couldn\'t sign " << form.getName();
 		std::cout << " because " << e.what();
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form) {
+	try {
+		form.execute(*this);
+		std::cout << _name << " executed " << form.getName() << "\n";
+	} catch(std::exception& e) {
+		std::cout << _name << " failed to execute " << form.getName();
+		std::cout << " couse " << e.what();
 	}
 }
 

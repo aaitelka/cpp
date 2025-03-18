@@ -6,14 +6,15 @@
 #    By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/09 16:06:05 by aaitelka          #+#    #+#              #
-#    Updated: 2025/03/15 22:04:46 by aaitelka         ###   ########.fr        #
+#    Updated: 2025/03/18 11:43:50 by aaitelka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		:= c++
 NAME	:= form
-HEADS	:= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp
-SRCS	:= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+HEADS	:= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+SRCS	:= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+
 OBJS	:= $(SRCS:.cpp=.o)
 CFLAGS	:= -Wall -Werror -Wextra -std=c++98
 

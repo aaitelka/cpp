@@ -6,17 +6,21 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 18:09:14 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/15 23:02:21 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/18 13:07:12 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <iostream>
+#include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() {
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("shrubb", 145, 137) {
+	_target = "any";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string& name)
-	: AForm(name, 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
+	: AForm("shrubb", 145, 137) {
+		_target = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& rhs)
@@ -31,10 +35,20 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
-void ShrubberyCreationForm::beSigned(Bureaucrat& bureaucrat) {
-	if (bureaucrat.getGrade() <= getRequiredGrade()) {
-		signForm(true);
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+
+	if (isSigned() && executor.getGrade() <= getExecGrade()) {
+		try {
+			const std::string filename = _target + "_shrubbery";
+			std::ofstream file(filename.c_str());
+
+			file << "efew";
+			file.close();
+			
+		} catch (std::ios_base::failure& e) {
+			std::cout << "failed to create file because " << e.what() << "\n";
+		}	
 	} else {
-		throw GradeTooLowException(getName() + "_Form: Grade too low");
+		throw GradeTooHighException("Attempting to execute form");
 	}
 }

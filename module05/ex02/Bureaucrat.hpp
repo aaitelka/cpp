@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:31:18 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/15 18:02:38 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/18 12:18:25 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ class Bureaucrat {
 		void upGrade();
 		void downGrade();
 		void signForm(AForm& form);
+
+		void executeForm(AForm const & form);
 
 		class GradeTooHighException : public std::invalid_argument {
 
