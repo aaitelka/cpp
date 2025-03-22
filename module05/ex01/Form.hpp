@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 02:07:22 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/22 19:46:12 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/22 20:03:04 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Form {
 
 	public:
 		Form();
-		Form(const std::string& name, const int reqGrd, const int grdToExec, bool isSigned);
 		Form(const Form& rhs);
 		Form& operator=(const Form& rhs);
 		~Form();
