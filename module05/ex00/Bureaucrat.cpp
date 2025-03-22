@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:38:11 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/14 03:57:45 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/22 19:28:22 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int Bureaucrat::getGrade() const {
 	return _grade;
 }
 
-const std::string Bureaucrat::getName() const {
+const std::string& Bureaucrat::getName() const {
 	return _name;
 }
 

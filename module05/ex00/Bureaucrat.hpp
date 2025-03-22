@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:31:18 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/14 03:06:42 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/22 19:28:09 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Bureaucrat {
 		Bureaucrat& operator=(const Bureaucrat& rhs);
 		~Bureaucrat();
 
-		const std::string getName() const;
+		const std::string& getName() const;
 		int getGrade() const;
 
 		void upGrade();
