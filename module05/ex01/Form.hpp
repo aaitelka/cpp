@@ -6,14 +6,13 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 02:07:22 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/14 05:23:59 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/22 19:46:12 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 #define FORM_HPP
 
-// #include "Bureaucrat.hpp"
 #include <ostream>
 #include <string>
 
@@ -23,8 +22,8 @@ class Form {
 
 	private:
 		const std::string	_name;
-		const int			_requiredGrade;
-		const int			_gradeToExecute;
+		const int			_grdSign;
+		const int			_grdExec;
 		bool				_isSigned;
 
 	public:
@@ -34,12 +33,12 @@ class Form {
 		Form& operator=(const Form& rhs);
 		~Form();
 
-		const	std::string getName() const;
-		int		getRequiredGrade() const;
-		int		getGradeToExecute() const;
+		const	std::string& getName() const;
+		int		getGradeSign() const;
+		int		getGradeExec() const;
 		bool	isSigned() const;
 
-		void beSigned(Bureaucrat& bureaucrat);
+		void	beSigned(Bureaucrat& bureaucrat);
 
 		class GradeTooHighException : public std::out_of_range {
 
