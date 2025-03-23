@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:07:12 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/18 12:00:49 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/23 16:38:52 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "Bureaucrat.hpp"
 
 class RobotomyRequestForm : public AForm {
+
 	public:
 		RobotomyRequestForm();
 		RobotomyRequestForm(const std::string& target);

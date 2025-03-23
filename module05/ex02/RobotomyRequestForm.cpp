@@ -6,20 +6,18 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:08:37 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/18 17:15:26 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/23 16:39:51 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <iostream>
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("nn", 72, 45) {
-	_target = "any";
+RobotomyRequestForm::RobotomyRequestForm() : AForm("robotomy request", 72, 45, "none") {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
-	: AForm("nn", 72, 45) {
-		_target = target;
+	: AForm("robotomy request", 72, 45, target) {
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& rhs)
@@ -32,22 +30,20 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
-	
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-	if (isSigned() && executor.getGrade() <= getExecGrade()) {
-		
-		std::srand(std::time(0));
-    	int result = std::rand() % 2;
-    	std::cout << "Drilling noises... *Bzzzzt*...\n";
-		
-		if (result == 0) {
-        std::cout << _target << " has been robotomized successfully 50% of the time.\n";
-    	} else {
-        std::cout << "Robotomy failed on " << _target << ".\n";
-    	}
+
+	AForm::execute(executor);
+
+	std::srand(std::time(0));
+	int result = std::rand() % 2;
+	std::cout << "Drilling noises... *Bzzzzt*...\n";
+
+	if (result == 0) {
+	std::cout << getTarget() << " has been robotomized successfully 50% of the time.\n";
 	} else {
-		throw GradeTooHighException("Attempting to execute form");
+		std::cout << "Robotomy failed on " << getTarget() << ".\n";
 	}
+
 }
