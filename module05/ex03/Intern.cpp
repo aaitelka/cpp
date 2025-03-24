@@ -6,7 +6,7 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 18:08:34 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/20 11:22:23 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:46:58 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target) 
             return (this->*creators[i])(target);
         }
     }
-
-    std::cout << "Error: Form '" << formName << "' not found!" << std::endl;
+    std::cout << "Intern can't create " << formName << std::endl;
 	return NULL;
 }

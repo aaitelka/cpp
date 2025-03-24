@@ -6,20 +6,18 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:36:39 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/18 18:23:58 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/23 16:25:30 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("presidential pardon", 25, 5) {
-	_target = "any";	
+PresidentialPardonForm::PresidentialPardonForm() : AForm("presidential pardon", 25, 5, "none") {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
-	: AForm("presidential pardon", 25, 5) {
-	_target = target;
+	: AForm("presidential pardon", 25, 5, target) {
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& rhs) 
@@ -32,13 +30,11 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-	
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const {
-	if (isSigned() && executor.getGrade() <= getExecGrade()) {
-		std::cout << _target << " has been pardoned by Zaphod Beeblebrox\n";
-	} else {
-		throw GradeTooHighException("Attempting to execute form");
-	}
+	
+	AForm::execute(executor);
+	std::cout << getTarget() << " has been pardoned by Zaphod Beeblebrox\n";
+
 }
