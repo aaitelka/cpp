@@ -6,11 +6,13 @@
 /*   By: aaitelka <aaitelka@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:08:37 by aaitelka          #+#    #+#             */
-/*   Updated: 2025/03/23 16:39:51 by aaitelka         ###   ########.fr       */
+/*   Updated: 2025/03/28 01:03:55 by aaitelka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("robotomy request", 72, 45, "none") {
