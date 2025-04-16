@@ -24,7 +24,7 @@ class ScalarConverter {
 		~ScalarConverter();
 
 	public:
-		static void convert(const char *str);
+		static void convert(const std::string &s);
 
 };
 
